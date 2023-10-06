@@ -16,12 +16,15 @@ int main()
 
    printf("%llu", Problem_1(number, multiples, SIZE))   
    */
-   unsigned int number = 0;
+   /*unsigned int number = 0;
    printf("number = ");
    scanf_s("%du", &number);
+   */
 
-   printf("%llu", Problem_2(number));
-
+   unsigned long long number = 0;
+   printf("Number = ");  
+   scanf_s("%llu", &number);
+   printf("%llu", Problem_3(number));
 
    return 0;
 }
