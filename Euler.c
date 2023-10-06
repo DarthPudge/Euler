@@ -34,12 +34,12 @@ unsigned long long Problem_2(const unsigned int number_)
    }
    return sum;
 }
-unsigned long long Problem_3(const unsigned int number_)
+unsigned long long Problem_3(const unsigned long long int number_)
 {
    unsigned long long divider;
    unsigned long long n = number_;
 
-   for (divider = 2; divider <= n; divider += 1) {
+   for (divider = 2; divider < n; divider += 1) {
        while (n % divider == 0) 
        {
            n /= divider;           

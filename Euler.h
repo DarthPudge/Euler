@@ -20,4 +20,4 @@ unsigned long long Problem_2(const unsigned int number_);
 * @param number_ : Число для которого ищется делитель.
 * @return : Самый большой делитель 
 */
-unsigned long long Problem_3(const unsigned int number_);
+unsigned long long Problem_3(const unsigned long long number_);
