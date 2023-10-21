@@ -1,6 +1,6 @@
 #include "Euler.h"
 
-unsigned long long Problem_1(const unsigned int number_, 
+unsigned long long Problem_1(const unsigned long long  number_, 
    const unsigned int* multiples_, 
    const unsigned int size_)
 {
@@ -18,7 +18,7 @@ unsigned long long Problem_1(const unsigned int number_,
    }
    return sum;
 }
-unsigned long long Problem_2(const unsigned int number_)
+unsigned long long Problem_2(const unsigned  long long  number_)
 {
    unsigned long long sum = 0;
    int firstFib = 1;
@@ -34,19 +34,75 @@ unsigned long long Problem_2(const unsigned int number_)
    }
    return sum;
 }
-unsigned long long Problem_3(const unsigned long long int number_)
+unsigned long long Problem_3(const unsigned long long number_)
 {
-   unsigned long long divider;
-   unsigned long long n = number_;
+    unsigned long long divider;
+    unsigned long long n = number_;
 
-   for (divider = 2; divider < n; divider += 1) {
-       while (n % divider == 0) 
-       {
-           n /= divider;           
-       }
-       if (n == 1) break;
-   }
-   return divider;
+    for (divider = 2; divider < n; divider += 1) {
+        while (n % divider == 0)
+        {
+            n /= divider;
+        }
+        if (n == 1) break;
+    }
+    return divider;
+}
+unsigned long long Problem_4(const unsigned long long number_)
+{
+    int palindrome = 0;
+    int res = 0;
+    int max = 0;
+    for (int a = 900; a < 1000; a++)
+    {
+        for (int b = 900; b < 1000; b++)
+        {
+            res = a * b;
+            if (IsPalindrome(res))
+            {
+                palindrome = res;
+                if (max < palindrome)
+                {
+                    max = palindrome;
+                }
+            }
+
+        }
+    }
+    return palindrome;
+}
+unsigned long long Problem_5(const unsigned long long number_)
+{
+    unsigned long long int t = 0;
+    unsigned long long int minNum = 20;
+    while (minNum)
+    {
+        if (t == 190)
+        {
+            break;
+        }
+
+        for (int i = 1; i < 20; ++i)
+        {
+
+            if (minNum % i == 0)
+            {
+                t += i;
+            }
+            else
+            {
+                t = 0;
+                minNum +=20;
+                break;
+            }
+            if (t == 190)
+            {
+                break;
+            }
+        }
+
+    }
+    return minNum;
 }
 /* while (n % 2 == 0)
     n /= 2;
