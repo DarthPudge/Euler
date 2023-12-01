@@ -29,7 +29,7 @@ int Reverse(unsigned long value_);
 * @param value_ : Число.
 * @return палиндром или не палиндром.
 */
-int IsPalindrome(unsigned long value_);
+int IsPalindrome(unsigned long long value_);
 
 #endif // !_FUNCTION_H_
 

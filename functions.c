@@ -1,5 +1,6 @@
 #include "functions.h"
 #include <math.h>
+#include "function.h"
 unsigned long long Square(const long long value_)
 {
 
@@ -21,8 +22,15 @@ int Reverse(unsigned long value_)
 
 int IsPalindrome(unsigned long long value_)
 {
-	return value_ == Reverse(value_);
+	int reverse = 0, temp = value_;
+	while (temp > 0)
+	{
+		reverse = reverse * 10 + temp % 10;
+		temp /= 10;
+	}
+	return (value_ == reverse);
 }
+
 
 int IsPrime(unsigned long value_)
 {

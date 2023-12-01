@@ -7,7 +7,7 @@ int main()
 {
    unsigned long long number = 0;
   
-   printf("Number = ");  
+   //printf("Number = ");  
    //scanf_s("%llu", &number);
    
    /*unsigned int multiples[SIZE];

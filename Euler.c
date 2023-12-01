@@ -1,4 +1,5 @@
 #include "Euler.h"
+#include "function.h"
 
 unsigned long long Problem_1(const unsigned long long  number_, 
    const unsigned int* multiples_, 
@@ -50,30 +51,46 @@ unsigned long long Problem_3(const unsigned long long number_)
 }
 unsigned long long Problem_4(const unsigned long long number_)
 {
-    int palindrome = 0;
-    int res = 0;
-    int max = 0;
-    for (int a = 900; a < 1000; a++)
-    {
-        for (int b = 900; b < 1000; b++)
-        {
-            res = a * b;
-            if (IsPalindrome(res))
-            {
-                palindrome = res;
-                if (max < palindrome)
-                {
-                    max = palindrome;
-                }
-            }
+    int maxPalindrome = 0, product;
 
+    for (int i = 100; i <= 999; i++)
+    {
+        for (int j = 100; j <= 999; j++)
+        {
+            product = i * j;
+
+            if (IsPalindrome(product) && product > maxPalindrome)
+            {
+                maxPalindrome = product;
+            }
         }
     }
-    return palindrome;
+
+    printf("The largest palindrome is: ");
+    return maxPalindrome;
 }
 unsigned long long Problem_5(const unsigned long long number_)
 {
-    unsigned long long int t = 0;
+    unsigned long long result = 20;
+    int i = 19;
+    int found = 0;
+
+    while (found == 0) {
+        if (result % i == 0 && i == 11) {
+            found = 1;
+        }
+        else if (result % i == 0 && i > 11) {
+            i--;
+        }
+        else {
+            i = 19;
+            result += 20;
+        }
+    }
+    printf("Your result:\n\t");
+
+    return result;
+  /*  unsigned long long int t = 0;
     unsigned long long int minNum = 20;
     while (minNum)
     {
@@ -102,7 +119,7 @@ unsigned long long Problem_5(const unsigned long long number_)
         }
 
     }
-    return minNum;
+    return minNum;*/
 }
 /* while (n % 2 == 0)
     n /= 2;
